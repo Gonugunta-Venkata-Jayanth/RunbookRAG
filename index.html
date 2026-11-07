@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RunbookRAG - grounded answers from operations runbooks</title>
+  <meta name="description" content="Hybrid BM25 + LSA retrieval with cited, extractive answers over Linux, container and AWS runbooks.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">RR</span>
+      <div>
+        <h1>RunbookRAG</h1>
+        <p>Grounded answers from operations runbooks, with a citation for every sentence.</p>
+      </div>
+    </div>
+    <span id="backend" class="pill">Loading index...</span>
+  </header>
+
+  <main>
+    <section class="ask card">
+      <form id="ask-form" autocomplete="off">
+        <label for="q" class="sr-only">Describe the incident</label>
+        <input id="q" name="q" type="search" placeholder="Describe the incident, e.g. container exits with code 137" required minlength="3" maxlength="500">
+        <button type="submit">Ask</button>
+      </form>
+      <div class="controls">
+        <div class="seg" role="radiogroup" aria-label="Retrieval mode">
+          <button type="button" data-mode="hybrid" class="on" role="radio" aria-checked="true">Hybrid</button>
+          <button type="button" data-mode="bm25" role="radio" aria-checked="false">BM25</button>
+          <button type="button" data-mode="dense" role="radio" aria-checked="false">Semantic (LSA)</button>
+        </div>
+        <div id="examples" class="examples"></div>
+      </div>
+    </section>
+
+    <section id="answer" class="card answer" hidden>
+      <div class="answer-head">
+        <h2>Answer</h2>
+        <span id="coverage" class="muted"></span>
+      </div>
+      <div id="answer-body"></div>
+      <div id="feedback" class="feedback" hidden>
+        <span class="muted">Was this helpful?</span>
+        <button type="button" data-helpful="true">Yes</button>
+        <button type="button" data-helpful="false">No</button>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <div class="section-head"><h2>Retrieved sections</h2><span id="latency" class="muted"></span></div>
+        <ol id="results" class="results"><li class="muted">Ask a question to see ranked runbook sections.</li></ol>
+      </section>
+      <section class="card">
+        <div class="section-head"><h2>Runbook</h2><span id="doc-cat" class="muted"></span></div>
+        <article id="doc" class="doc"><p class="muted">Select a result or a runbook to read it in full.</p></article>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="section-head"><h2>Retrieval quality</h2><span id="eval-n" class="muted"></span></div>
+        <table id="metrics" class="metrics"><tbody><tr><td class="muted">Evaluation report not available.</td></tr></tbody></table>
+        <p class="note">Hand-written evaluation set: <em>direct</em> queries reuse runbook vocabulary, <em>paraphrase</em> queries avoid it. Labels are the runbook that answers each query.</p>
+      </section>
+      <section class="card">
+        <div class="section-head"><h2>Corpus</h2><span id="corpus-n" class="muted"></span></div>
+        <ul id="corpus" class="corpus"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>RunbookRAG · MIT License · <a href="https://github.com/Gonugunta-Venkata-Jayanth/RunbookRAG">Source on GitHub</a></span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
