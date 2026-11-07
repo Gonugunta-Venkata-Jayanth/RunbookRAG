@@ -1,0 +1,89 @@
+{"query": "no space left on device on the root partition", "relevant": "disk-full", "set": "direct"}
+{"query": "journal logs are eating my disk", "relevant": "disk-full", "set": "direct"}
+{"query": "df shows 100 percent used on /", "relevant": "disk-full", "set": "direct"}
+{"query": "deleted a big log file but space was not freed", "relevant": "disk-full", "set": "direct"}
+{"query": "df says there is free space but I cannot create files", "relevant": "inode-exhaustion", "set": "direct"}
+{"query": "too many small session files filling the filesystem", "relevant": "inode-exhaustion", "set": "direct"}
+{"query": "df -i shows 100% IUse", "relevant": "inode-exhaustion", "set": "direct"}
+{"query": "load average is much higher than the number of cores", "relevant": "high-cpu-load", "set": "direct"}
+{"query": "server is slow and top shows one process using all cpu", "relevant": "high-cpu-load", "set": "direct"}
+{"query": "high steal time on my virtual machine", "relevant": "high-cpu-load", "set": "direct"}
+{"query": "kernel killed my process out of memory", "relevant": "oom-killer", "set": "direct"}
+{"query": "dmesg says Killed process", "relevant": "oom-killer", "set": "direct"}
+{"query": "java service keeps getting killed when memory runs out", "relevant": "oom-killer", "set": "direct"}
+{"query": "systemctl start fails with status 203/EXEC", "relevant": "systemd-service-failing", "set": "direct"}
+{"query": "my unit file changes are not picked up", "relevant": "systemd-service-failing", "set": "direct"}
+{"query": "service does not come back after reboot", "relevant": "systemd-service-failing", "set": "direct"}
+{"query": "lots of failed password attempts in auth.log", "relevant": "ssh-brute-force", "set": "direct"}
+{"query": "how do I stop bots guessing ssh passwords", "relevant": "ssh-brute-force", "set": "direct"}
+{"query": "set up fail2ban for sshd", "relevant": "ssh-brute-force", "set": "direct"}
+{"query": "Permission denied (publickey) when connecting", "relevant": "ssh-publickey-denied", "set": "direct"}
+{"query": "authorized_keys is ignored by the server", "relevant": "ssh-publickey-denied", "set": "direct"}
+{"query": "which username do I use to log into an ubuntu ec2 image", "relevant": "ssh-publickey-denied", "set": "direct"}
+{"query": "Temporary failure in name resolution", "relevant": "dns-resolution-failure", "set": "direct"}
+{"query": "could not resolve host but ping by ip works", "relevant": "dns-resolution-failure", "set": "direct"}
+{"query": "systemd-resolved upstream servers wrong", "relevant": "dns-resolution-failure", "set": "direct"}
+{"query": "browser warns the https certificate expired", "relevant": "tls-certificate-expiry", "set": "direct"}
+{"query": "certbot renew is not running automatically", "relevant": "tls-certificate-expiry", "set": "direct"}
+{"query": "check when my ssl cert expires with openssl", "relevant": "tls-certificate-expiry", "set": "direct"}
+{"query": "nginx shows 502 bad gateway", "relevant": "nginx-502-bad-gateway", "set": "direct"}
+{"query": "connect() failed connection refused while connecting to upstream", "relevant": "nginx-502-bad-gateway", "set": "direct"}
+{"query": "gunicorn socket permission denied behind nginx", "relevant": "nginx-502-bad-gateway", "set": "direct"}
+{"query": "/var/lib/docker is huge", "relevant": "docker-disk-usage", "set": "direct"}
+{"query": "how to clean up old docker images and build cache", "relevant": "docker-disk-usage", "set": "direct"}
+{"query": "container json log files are too big", "relevant": "docker-disk-usage", "set": "direct"}
+{"query": "container status shows Restarting all the time", "relevant": "docker-restart-loop", "set": "direct"}
+{"query": "docker container exits with code 137", "relevant": "docker-restart-loop", "set": "direct"}
+{"query": "entrypoint not found exit code 127", "relevant": "docker-restart-loop", "set": "direct"}
+{"query": "bind: address already in use", "relevant": "port-already-in-use", "set": "direct"}
+{"query": "EADDRINUSE when starting node server", "relevant": "port-already-in-use", "set": "direct"}
+{"query": "find which process is listening on port 8080", "relevant": "port-already-in-use", "set": "direct"}
+{"query": "aws says RequestTimeTooSkewed signature expired", "relevant": "time-drift-ntp", "set": "direct"}
+{"query": "clock is out of sync between servers", "relevant": "time-drift-ntp", "set": "direct"}
+{"query": "chronyc tracking shows a large offset", "relevant": "time-drift-ntp", "set": "direct"}
+{"query": "my script works manually but not from crontab", "relevant": "cron-job-not-running", "set": "direct"}
+{"query": "crontab entry never executes", "relevant": "cron-job-not-running", "set": "direct"}
+{"query": "percent sign breaks my cron command", "relevant": "cron-job-not-running", "set": "direct"}
+{"query": "application logs too many open files", "relevant": "too-many-open-files", "set": "direct"}
+{"query": "EMFILE errors under load", "relevant": "too-many-open-files", "set": "direct"}
+{"query": "raise LimitNOFILE for a systemd service", "relevant": "too-many-open-files", "set": "direct"}
+{"query": "cannot ssh to ec2 instance connection times out", "relevant": "aws-ec2-unreachable", "set": "direct"}
+{"query": "ec2 instance status check failed", "relevant": "aws-ec2-unreachable", "set": "direct"}
+{"query": "security group and route table for public instance", "relevant": "aws-ec2-unreachable", "set": "direct"}
+{"query": "s3 cp returns AccessDenied 403", "relevant": "aws-s3-access-denied", "set": "direct"}
+{"query": "kms decrypt permission needed for bucket objects", "relevant": "aws-s3-access-denied", "set": "direct"}
+{"query": "bucket policy explicit deny blocks my role", "relevant": "aws-s3-access-denied", "set": "direct"}
+{"query": "Task timed out after 3.00 seconds", "relevant": "aws-lambda-timeout", "set": "direct"}
+{"query": "lambda inside vpc cannot reach the internet", "relevant": "aws-lambda-timeout", "set": "direct"}
+{"query": "api gateway returns 504 from my function", "relevant": "aws-lambda-timeout", "set": "direct"}
+{"query": "FATAL sorry too many clients already", "relevant": "postgres-too-many-connections", "set": "direct"}
+{"query": "postgres max_connections reached after scaling app", "relevant": "postgres-too-many-connections", "set": "direct"}
+{"query": "idle in transaction sessions piling up", "relevant": "postgres-too-many-connections", "set": "direct"}
+{"query": "free shows almost no free memory but server is fine", "relevant": "memory-page-cache", "set": "direct"}
+{"query": "should I drop caches to free ram", "relevant": "memory-page-cache", "set": "direct"}
+{"query": "difference between free and available memory", "relevant": "memory-page-cache", "set": "direct"}
+{"query": "mtr shows packet loss at one hop", "relevant": "network-packet-loss", "set": "direct"}
+{"query": "connections stall over the vpn mtu problem", "relevant": "network-packet-loss", "set": "direct"}
+{"query": "interface errors and drops on eth0", "relevant": "network-packet-loss", "set": "direct"}
+{"query": "the machine ran out of storage and apps cannot write", "relevant": "disk-full", "set": "paraphrase"}
+{"query": "millions of tiny files and now nothing new can be saved", "relevant": "inode-exhaustion", "set": "paraphrase"}
+{"query": "box is sluggish and the processor is pegged", "relevant": "high-cpu-load", "set": "paraphrase"}
+{"query": "my worker vanished and the kernel log mentions memory", "relevant": "oom-killer", "set": "paraphrase"}
+{"query": "daemon refuses to come up after I edited its config", "relevant": "systemd-service-failing", "set": "paraphrase"}
+{"query": "someone keeps hammering port 22 from random addresses", "relevant": "ssh-brute-force", "set": "paraphrase"}
+{"query": "server rejects my key when I try to log in remotely", "relevant": "ssh-publickey-denied", "set": "paraphrase"}
+{"query": "hostnames do not resolve to addresses anymore", "relevant": "dns-resolution-failure", "set": "paraphrase"}
+{"query": "https site shows a red privacy warning", "relevant": "tls-certificate-expiry", "set": "paraphrase"}
+{"query": "reverse proxy cannot talk to the app server behind it", "relevant": "nginx-502-bad-gateway", "set": "paraphrase"}
+{"query": "images and build layers ate the whole drive", "relevant": "docker-disk-usage", "set": "paraphrase"}
+{"query": "my container dies a few seconds after it starts, over and over", "relevant": "docker-restart-loop", "set": "paraphrase"}
+{"query": "another program is already holding the listening socket", "relevant": "port-already-in-use", "set": "paraphrase"}
+{"query": "hosts disagree about the current time", "relevant": "time-drift-ntp", "set": "paraphrase"}
+{"query": "scheduled nightly task silently does nothing", "relevant": "cron-job-not-running", "set": "paraphrase"}
+{"query": "process hit its file descriptor limit", "relevant": "too-many-open-files", "set": "paraphrase"}
+{"query": "virtual server in the cloud stopped answering on the network", "relevant": "aws-ec2-unreachable", "set": "paraphrase"}
+{"query": "forbidden error when reading objects from a bucket", "relevant": "aws-s3-access-denied", "set": "paraphrase"}
+{"query": "serverless function hits its time limit", "relevant": "aws-lambda-timeout", "set": "paraphrase"}
+{"query": "database refuses new sessions because the limit is reached", "relevant": "postgres-too-many-connections", "set": "paraphrase"}
+{"query": "monitoring says ram is nearly exhausted but nothing is wrong", "relevant": "memory-page-cache", "set": "paraphrase"}
+{"query": "network drops packets now and then and throughput is poor", "relevant": "network-packet-loss", "set": "paraphrase"}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.coverage
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+data/
+.terraform/
+*.tfstate*
+.terraform.lock.hcl
+node_modules/

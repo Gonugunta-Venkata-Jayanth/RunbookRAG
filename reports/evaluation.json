@@ -1,0 +1,150 @@
+{
+  "dataset": "eval/queries.jsonl (hand-written; labels are the runbook that answers each query)",
+  "dims": 16,
+  "queries": 89,
+  "documents": 22,
+  "chunks": 88,
+  "overall": {
+    "hybrid": {
+      "recall@1": 0.9101,
+      "recall@3": 0.9775,
+      "recall@5": 0.9775,
+      "mrr": 0.9413
+    },
+    "bm25": {
+      "recall@1": 0.8989,
+      "recall@3": 0.9663,
+      "recall@5": 0.9775,
+      "mrr": 0.932
+    },
+    "dense": {
+      "recall@1": 0.8764,
+      "recall@3": 0.9775,
+      "recall@5": 0.9775,
+      "mrr": 0.9248
+    }
+  },
+  "by_set": {
+    "direct": {
+      "hybrid": {
+        "recall@1": 0.9701,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.9851
+      },
+      "bm25": {
+        "recall@1": 0.9851,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.9925
+      },
+      "dense": {
+        "recall@1": 0.9104,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.9552
+      }
+    },
+    "paraphrase": {
+      "hybrid": {
+        "recall@1": 0.7273,
+        "recall@3": 0.9091,
+        "recall@5": 0.9091,
+        "mrr": 0.8081
+      },
+      "bm25": {
+        "recall@1": 0.6364,
+        "recall@3": 0.8636,
+        "recall@5": 0.9091,
+        "mrr": 0.7477
+      },
+      "dense": {
+        "recall@1": 0.7727,
+        "recall@3": 0.9091,
+        "recall@5": 0.9091,
+        "mrr": 0.8323
+      }
+    }
+  },
+  "set_sizes": {
+    "direct": 67,
+    "paraphrase": 22
+  },
+  "paraphrase_mrr_by_dims": {
+    "16": {
+      "hybrid": 0.8081,
+      "bm25": 0.7477,
+      "dense": 0.8323
+    },
+    "32": {
+      "hybrid": 0.7348,
+      "bm25": 0.7477,
+      "dense": 0.7778
+    },
+    "64": {
+      "hybrid": 0.7197,
+      "bm25": 0.7477,
+      "dense": 0.7391
+    }
+  },
+  "answers": {
+    "direct": {
+      "answer_rate": 0.9701,
+      "citation_precision": 0.9846
+    },
+    "paraphrase": {
+      "answer_rate": 0.5,
+      "citation_precision": 1.0
+    }
+  },
+  "misses_hybrid": [
+    {
+      "query": "which username do I use to log into an ubuntu ec2 image",
+      "relevant": "ssh-publickey-denied",
+      "rank": 2,
+      "top": "docker-disk-usage"
+    },
+    {
+      "query": "EMFILE errors under load",
+      "relevant": "too-many-open-files",
+      "rank": 2,
+      "top": "high-cpu-load"
+    },
+    {
+      "query": "box is sluggish and the processor is pegged",
+      "relevant": "high-cpu-load",
+      "rank": null,
+      "top": null
+    },
+    {
+      "query": "daemon refuses to come up after I edited its config",
+      "relevant": "systemd-service-failing",
+      "rank": 3,
+      "top": "dns-resolution-failure"
+    },
+    {
+      "query": "someone keeps hammering port 22 from random addresses",
+      "relevant": "ssh-brute-force",
+      "rank": 2,
+      "top": "port-already-in-use"
+    },
+    {
+      "query": "https site shows a red privacy warning",
+      "relevant": "tls-certificate-expiry",
+      "rank": 3,
+      "top": "aws-lambda-timeout"
+    },
+    {
+      "query": "virtual server in the cloud stopped answering on the network",
+      "relevant": "aws-ec2-unreachable",
+      "rank": 9,
+      "top": "dns-resolution-failure"
+    },
+    {
+      "query": "monitoring says ram is nearly exhausted but nothing is wrong",
+      "relevant": "memory-page-cache",
+      "rank": 2,
+      "top": "inode-exhaustion"
+    }
+  ]
+}
